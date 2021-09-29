@@ -22,36 +22,30 @@ export default class Card {
   }
 
   getTemplate () {
-    return `<div class="product-card">
-
-      <div class="product-card__image" style="background-image: url(${this.images[0]});"></div>
-
-    <div class="product-card__wrapper">
-
-      <div class="product-card__rating rating">
-        <div class="rating__count">
-            <span>${this.rating}</span>
-            <i class="bi bi-star"></i>
+    return `<div class="os-product-card">
+    <div class="os-product-img" style="background-image: url(${this.images[0]});"></div>
+    <div class="os-product-content">
+      <div class="os-product-price-wrapper">
+        <div class="os-product-rating">
+          <span>${this.rating}</span>
+          <i class="bi bi-star"></i>
         </div>
-
-           <div class="product__price">${this.price}</div>
+        <div class="os-product-price">${this.price}</div>
       </div>
-         <h5 class="product-card__name">${this.brand}</h5>
-         <p class="product-card__description">${this.title}</p>
-  </div>
-
-
-       <footer class="product-card__buttons">
-         <button class="button-wishlist">
-           <i class="bi bi-heart product-wish-icon"></i>
-           Wishlist
-         </button>
-         <button class="button-addtocart">
-           <i class="bi bi-box-seam product-shopping-bag"></i>
-           Add To Cart
-         </button>
-       </footer>
-     </div>`
+      <h5 class="os-product-title">${this.brand}</h5>
+      <p class="os-product-description">${this.title}</p>
+    </div>
+    <footer class="os-product-footer">
+      <button class="os-btn-default">
+        <i class="bi bi-heart os-product-wish-icon"></i>
+        Wishlist
+      </button>
+      <button class="os-btn-primary">
+        <i class="bi bi-box-seam os-product-shopping-bag"></i>
+        Add To Cart
+      </button>
+    </footer>
+  </div>`
   }
 
   render () {
