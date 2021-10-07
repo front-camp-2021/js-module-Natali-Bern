@@ -22,30 +22,30 @@ export default class Card {
   }
 
   getTemplate () {
-    return `<div class="os-product-card">
-    <div class="os-product-img" style="background-image: url(${this.images[0]});"></div>
-    <div class="os-product-content">
-      <div class="os-product-price-wrapper">
-        <div class="os-product-rating">
-          <span>${this.rating}</span>
-          <i class="bi bi-star"></i>
+    return `<div class="product-card">
+        <div class="product-card__inner">
+            <div class="product-card__image" style="background-image: url(${this.images[0]})"></div>
+            <div class="product-card__wrapper">
+                <div class="product-card__rating rating">
+                    <span class="rating__count">${this.rating}</span>
+                    <i class="bi bi-star"></i>
+                </div>
+                <div class="rating__price">${this.price}</div>
+            </div>
+            <h3 class="product-card__name">${this.brand}</h3>
+            <div class="product-card__description">${this.title}-${this.category}</div>
         </div>
-        <div class="os-product-price">${this.price}</div>
-      </div>
-      <h5 class="os-product-title">${this.brand}</h5>
-      <p class="os-product-description">${this.title}</p>
-    </div>
-    <footer class="os-product-footer">
-      <button class="os-btn-default">
-        <i class="bi bi-heart os-product-wish-icon"></i>
-        Wishlist
-      </button>
-      <button class="os-btn-primary">
-        <i class="bi bi-box-seam os-product-shopping-bag"></i>
-        Add To Cart
-      </button>
-    </footer>
-  </div>`
+            <div class="product-card__buttons">
+                <button class="button-wishlist">
+                    <i class="bi bi-heart os-product-wish-icon"></i>
+                    <span class="button-wishlist__text">Wishlist</span>
+                </button>
+                <button class="button-addtocart">
+                <i class="bi bi-box-seam os-product-shopping-bag"></i>
+                    <span class="button-addtocart__text">Add to Cart</span>
+                </button>
+            </div>
+    </div>`
   }
 
   render () {
